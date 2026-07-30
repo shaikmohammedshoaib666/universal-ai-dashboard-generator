@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.env
+.streamlit/secrets.toml
+.venv/
+venv/
+data/latest_cleaned.csv
+outputs/*.pdf
+outputs/*.csv
+!outputs/.gitkeep

@@ -1,0 +1,21 @@
+services:
+  dashboard:
+    build: .
+    ports:
+      - "8501:8501"
+    env_file: .env
+    volumes:
+      - dashboard_data:/app/data
+      - dashboard_outputs:/app/outputs
+
+  scheduler:
+    build: .
+    command: python -m src.scheduler
+    env_file: .env
+    volumes:
+      - dashboard_data:/app/data
+      - dashboard_outputs:/app/outputs
+
+volumes:
+  dashboard_data:
+  dashboard_outputs:
